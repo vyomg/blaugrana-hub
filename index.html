@@ -5,50 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blaugrana Hub - FC Barcelona Fan Site</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #0c1c8c; color: white; margin: 0; }
-    header { background: #a50044; padding: 20px; text-align: center; }
-    nav a { color: white; margin: 0 10px; text-decoration: none; }
-    section { padding: 20px; }
-    h1, h2 { margin-bottom: 10px; }
-    .card { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin-bottom: 20px; }
+    /* ====== CSS ====== */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #004d98;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      width: 50px;
+      vertical-align: middle;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #004d98;
+    }
+    footer {
+      background-color: #004d98;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
+
+  <!-- ====== HEADER ====== -->
   <header>
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="FC Barcelona Logo">
     <h1>⚽ Blaugrana Hub</h1>
     <nav>
       <a href="#live-scores">Live Scores</a>
       <a href="#players">Players</a>
-      <a href="#matches">Upcoming Matches</a>
+      <a href="#fixtures">Upcoming Matches</a>
       <a href="#rumors">Transfer Rumors</a>
     </nav>
   </header>
 
+  <!-- ====== LIVE SCORES ====== -->
   <section id="live-scores">
     <h2>📊 Live Match Scores</h2>
-    <div class="card" id="scores">No live match currently</div>
-  </section>
-
-  <section id="players">
-    <h2>👥 Players</h2>
-    <div class="card">
-      Lewandowski, Pedri, Gavi, Ter Stegen, Frenkie de Jong...
+    <div class="card" id="live-scores-container">
+      No live match currently
     </div>
   </section>
 
-  <section id="matches">
+  <!-- ====== PLAYERS ====== -->
+  <section id="players">
+    <h2>👥 Players</h2>
+    <table id="players-stats">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Goals</th>
+          <th>Assists</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Robert Lewandowski</td><td>Forward</td><td>5</td><td>2</td></tr>
+        <tr><td>Pedri</td><td>Midfielder</td><td>2</td><td>5</td></tr>
+        <tr><td>Gavi</td><td>Midfielder</td><td>1</td><td>3</td></tr>
+        <tr><td>Marc-André ter Stegen</td><td>Goalkeeper</td><td>0</td><td>0</td></tr>
+        <tr><td>Frenkie de Jong</td><td>Midfielder</td><td>1</td><td>4</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====== UPCOMING FIXTURES ====== -->
+  <section id="fixtures">
     <h2>📅 Upcoming Matches</h2>
     <div class="card">
       Barcelona vs Real Madrid - Oct 28, 2025<br>
-      Barcelona vs Atletico Madrid - Nov 2, 2025
+      Barcelona vs Atletico Madrid - Nov 2, 2025<br>
+      Barcelona vs Sevilla - Nov 9, 2025
     </div>
   </section>
 
+  <!-- ====== TRANSFER RUMORS ====== -->
   <section id="rumors">
     <h2>🔥 Transfer Rumors</h2>
     <div class="card">
-      Rumor: Barcelona linked with Erling Haaland (not confirmed)
+      Erling Haaland linked with Barcelona (unconfirmed)<br>
+      Jude Bellingham transfer rumors<br>
+      Franck Kessié contract updates
     </div>
   </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    &copy; 2025 Blaugrana Hub. All rights reserved.
+  </footer>
+
+  <!-- ====== JAVASCRIPT ====== -->
+  <script>
+    // Example: fetch live scores from free API (replace YOUR_API_KEY)
+    async function fetchLiveScores() {
+      try {
+        const response = await fetch('https://api.football-data.org/v4/teams/81/matches?status=LIVE', {
+          headers: { 'X-Auth-Token': 'YOUR_API_KEY' }
+        });
+        const data = await response.json();
+        const matches = data.matches || [];
+        const container = document.getElementById('live-scores-container');
+        if (matches.length === 0) {
+          container.innerHTML = 'No live match currently';
+        } else {
+          container.innerHTML = matches.map(m => 
+            `<div><strong>${m.homeTeam.name}</strong> ${m.score.fullTime.home} - ${m.score.fullTime.away} <strong>${m.awayTeam.name}</strong> <br>Date: ${new Date(m.utcDate).toLocaleString()}</div>`
+          ).join('');
+        }
+      } catch(err) {
+        console.error(err);
+        document.getElementById('live-scores-container').innerHTML = 'Unable to fetch live scores.';
+      }
+    }
+
+    fetchLiveScores();
+    // You can call fetchLiveScores() periodically if you want live updates.
+  </script>
 </body>
 </html>
