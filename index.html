@@ -3,237 +3,156 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blaugrana Hub - FC Barcelona Fan Site</title>
+  <title>FC Barcelona Fan Hub</title>
   <style>
-    /* ====== GENERAL STYLES ====== */
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #0a0a23;
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #004d98;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header img {
-      width: 60px;
-      vertical-align: middle;
-    }
-
-    header h1 {
-      display: inline-block;
-      margin-left: 15px;
-      font-size: 2em;
-      vertical-align: middle;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #ffcc00;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    section {
-      padding: 30px 20px;
-    }
-
-    h2 {
-      border-bottom: 2px solid #004d98;
-      display: inline-block;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      padding: 15px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-
-    /* ====== PLAYER CARDS ====== */
-    .player-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
-
-    .player-card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 15px;
-      padding: 15px;
-      text-align: center;
-      width: 180px;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .player-card:hover {
-      transform: scale(1.05);
-      background: rgba(255,255,255,0.2);
-    }
-
-    .player-card img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .player-card h3 {
-      margin: 10px 0 5px 0;
-      font-size: 1.2em;
-    }
-
-    .player-card p {
-      margin: 3px 0;
-      font-size: 0.9em;
-    }
-
-    /* ====== TABLES ====== */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-
-    table, th, td {
-      border: 1px solid #004d98;
-    }
-
-    th, td {
-      padding: 8px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #004d98;
-    }
-
-    /* ====== FOOTER ====== */
-    footer {
-      background-color: #004d98;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-      font-size: 0.9em;
-    }
+    /* Add your CSS styles here */
   </style>
 </head>
 <body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/FC_Barcelona_logo.svg/1200px-FC_Barcelona_logo.svg.png" alt="FC Barcelona Logo" width="50">
+    <h1>FC Barcelona Fan Hub</h1>
+  </header>
 
-<header>
-  <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="FC Barcelona Logo">
-  <h1>⚽ Blaugrana Hub</h1>
   <nav>
-    <a href="#live-scores">Live Scores</a>
     <a href="#players">Players</a>
-    <a href="#fixtures">Upcoming Matches</a>
-    <a href="#rumors">Transfer Rumors</a>
+    <a href="#fixtures">Upcoming Fixtures</a>
+    <a href="#live-scores">Live Scores</a>
+    <a href="#transfer-rumors">Transfer Rumors</a>
   </nav>
-</header>
 
-<!-- ====== LIVE SCORES ====== -->
-<section id="live-scores">
-  <h2>📊 Live Match Scores</h2>
-  <div class="card" id="live-scores-container">
-    No live match currently
-  </div>
-</section>
-
-<!-- ====== PLAYERS ====== -->
-<section id="players">
-  <h2>👥 FC Barcelona Squad 2025/26</h2>
-  <div class="player-cards">
-
-    <div class="player-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Robert_Lewandowski_2022.jpg" alt="Robert Lewandowski">
-      <h3>Robert Lewandowski</h3>
-      <p>Jersey No: 9</p>
-      <p>Position: Forward</p>
-      <p>Goals: 25</p>
-      <p>Assists: 7</p>
+  <section id="players">
+    <h2>Player Cards</h2>
+    <div id="player-cards">
+      <!-- Player cards will be populated here -->
     </div>
+  </section>
 
-    <div class="player-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Pedri_2022.jpg" alt="Pedri">
-      <h3>Pedri</h3>
-      <p>Jersey No: 16</p>
-      <p>Position: Midfielder</p>
-      <p>Goals: 5</p>
-      <p>Assists: 8</p>
-    </div>
+  <section id="fixtures">
+    <h2>Upcoming Fixtures</h2>
+    <ul id="fixtures-list">
+      <!-- Fixtures will be populated here -->
+    </ul>
+  </section>
 
-    <div class="player-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Gavi_2022.jpg" alt="Gavi">
-      <h3>Gavi</h3>
-      <p>Jersey No: 6</p>
-      <p>Position: Midfielder</p>
-      <p>Goals: 3</p>
-      <p>Assists: 5</p>
-    </div>
+  <section id="live-scores">
+    <h2>Live Scores</h2>
+    <ul id="live-scores-list">
+      <!-- Live scores will be populated here -->
+    </ul>
+  </section>
 
-    <div class="player-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Frenkie_de_Jong_2022.jpg" alt="Frenkie de Jong">
-      <h3>Frenkie de Jong</h3>
-      <p>Jersey No: 21</p>
-      <p>Position: Midfielder</p>
-      <p>Goals: 2</p>
-      <p>Assists: 6</p>
-    </div>
+  <section id="transfer-rumors">
+    <h2>Transfer Rumors</h2>
+    <ul id="transfer-rumors-list">
+      <!-- Transfer rumors will be populated here -->
+    </ul>
+  </section>
 
-    <div class="player-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Marc-Andre_ter_Stegen_2022.jpg" alt="Ter Stegen">
-      <h3>Marc-André ter Stegen</h3>
-      <p>Jersey No: 1</p>
-      <p>Position: Goalkeeper</p>
-      <p>Goals: 0</p>
-      <p>Assists: 0</p>
-    </div>
+  <footer>
+    <p>&copy; 2025 FC Barcelona Fan Hub. All rights reserved.</p>
+  </footer>
 
-    <!-- Add more player cards here using the same format -->
+  <script>
+    // Fetch and display player cards
+    const players = [
+      { name: 'Marc-André ter Stegen', position: 'Goalkeeper', image: 'ter-stegen.jpg' },
+      { name: 'Joan García', position: 'Goalkeeper', image: 'joan-garcia.jpg' },
+      { name: 'Wojciech Szczęsny', position: 'Goalkeeper', image: 'szczesny.jpg' },
+      { name: 'Diego Kochen', position: 'Goalkeeper', image: 'diego-kochen.jpg' },
+      { name: 'Eder Aller', position: 'Goalkeeper', image: 'eder-aller.jpg' },
+      { name: 'Ronald Araujo', position: 'Defender', image: 'ronald-araujo.jpg' },
+      { name: 'Jules Koundé', position: 'Defender', image: 'jules-kounde.jpg' },
+      { name: 'Pau Cubarsí', position: 'Defender', image: 'pau-cubarsi.jpg' },
+      { name: 'Marc Bernal', position: 'Defender', image: 'marc-bernal.jpg' },
+      { name: 'Alejandro Balde', position: 'Defender', image: 'alejandro-balde.jpg' },
+      { name: 'Jordi Alba', position: 'Defender', image: 'jordi-alba.jpg' },
+      { name: 'Sergi Roberto', position: 'Midfielder', image: 'sergi-roberto.jpg' },
+      { name: 'Fermín López', position: 'Midfielder', image: 'fermin-lopez.jpg' },
+      { name: 'Oriol Romeu', position: 'Midfielder', image: 'oriol-romeu.jpg' },
+      { name: 'Gavi', position: 'Midfielder', image: 'gavi.jpg' },
+      { name: 'Pedri', position: 'Midfielder', image: 'pedri.jpg' },
+      { name: 'Ilkay Gündogan', position: 'Midfielder', image: 'ilkay-gundogan.jpg' },
+      { name: 'Vitor Roque', position: 'Forward', image: 'vitor-roque.jpg' },
+      { name: 'Robert Lewandowski', position: 'Forward', image: 'robert-lewandowski.jpg' },
+      { name: 'Ansu Fati', position: 'Forward', image: 'ansu-fati.jpg' },
+      { name: 'Lamine Yamal', position: 'Forward', image: 'lamine-yamal.jpg' },
+      { name: 'Roony Bardghji', position: 'Forward', image: 'roony-bardghji.jpg' },
+      { name: 'Ousmane Dembélé', position: 'Forward', image: 'ousmane-dembele.jpg' },
+      { name: 'Ferran Torres', position: 'Forward', image: 'ferran-torres.jpg' },
+      { name: 'Joaquín Jiménez', position: 'Forward', image: 'joaquin-jimenez.jpg' },
+      { name: 'Marc Bernal', position: 'Midfielder', image: 'marc-bernal.jpg' },
+      { name: 'Oriol Romeu', position: 'Midfielder', image: 'oriol-romeu.jpg' },
+      { name: 'Gavi', position: 'Midfielder', image: 'gavi.jpg' },
+      { name: 'Pedri', position: 'Midfielder', image: 'pedri.jpg' },
+    ];
 
-  </div>
-</section>
+    const playerCardsContainer = document.getElementById('player-cards');
+    players.forEach(player => {
+      const card = document.createElement('div');
+      card.classList.add('player-card');
+      card.innerHTML = `
+        <img src="${player.image}" alt="${player.name}">
+        <h3>${player.name}</h3>
+        <p>${player.position}</p>
+      `;
+      playerCardsContainer.appendChild(card);
+    });
 
-<!-- ====== UPCOMING FIXTURES ====== -->
-<section id="fixtures">
-  <h2>📅 Upcoming Matches</h2>
-  <div class="card">
-    Barcelona vs Real Madrid - Oct 28, 2025<br>
-    Barcelona vs Atletico Madrid - Nov 2, 2025<br>
-    Barcelona vs Sevilla - Nov 9, 2025
-  </div>
-</section>
+    // Fetch and display upcoming fixtures
+    fetch('https://api.football-data.org/v4/competitions/PD/matches', {
+      headers: { 'X-Auth-Token': 'YOUR_API_KEY' }
+    })
+      .then(response => response.json())
+      .then(data => {
+        const fixturesList = document.getElementById('fixtures-list');
+        data.matches.forEach(match => {
+          if (match.homeTeam.name === 'FC Barcelona' || match.awayTeam.name === 'FC Barcelona') {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${match.homeTeam.name} vs ${match.awayTeam.name} - ${new Date(match.utcDate).toLocaleDateString()}`;
+            fixturesList.appendChild(listItem);
+          }
+        });
+      })
+      .catch(error => console.error('Error fetching fixtures:', error));
 
-<!-- ====== TRANSFER RUMORS ====== -->
-<section id="rumors">
-  <h2>🔥 Transfer Rumors</h2>
-  <div class="card">
-    Erling Haaland linked with Barcelona (unconfirmed)<br>
-    Jude Bellingham transfer rumors<br>
-    Franck Kessié contract updates
-  </div>
-</section>
+    // Fetch and display live scores
+    fetch('https://api.football-data.org/v4/matches', {
+      headers: { 'X-Auth-Token': 'YOUR_API_KEY' }
+    })
+      .then(response => response.json())
+      .then(data => {
+        const liveScoresList = document.getElementById('live-scores-list');
+        data.matches.forEach(match => {
+          if (match.status === 'LIVE' && (match.homeTeam.name === 'FC Barcelona' || match.awayTeam.name === 'FC Barcelona')) {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${match.homeTeam.name} ${match.score.fullTime.homeTeam} - ${match.score.fullTime.awayTeam} ${match.awayTeam.name}`;
+            liveScoresList.appendChild(listItem);
+          }
+        });
+      })
+      .catch(error => console.error('Error fetching live scores:', error));
 
-<footer>
-  This site is a fan project. All logos, images, and player names are the property of FC Barcelona.
-</footer>
+    // Display transfer rumors
+    const transferRumors = [
+      { player: 'Lionel Messi', rumor: 'Linked with a return to Barcelona.' },
+      { player: 'Sergi Roberto', rumor: 'Potential move to Premier League.' },
+      { player: 'Robert Lewandowski', rumor: 'Interest from AC Milan.' },
+      { player: 'Marcus Rashford', rumor: 'Desires permanent move to Barcelona.' },
+      { player: 'Murillo', rumor: 'Linked as replacement for Inigo Martinez.' },
+      { player: 'Fermín López', rumor: 'Bayern Munich interest.' },
+      { player: 'Oriol Romeu', rumor: 'Contract termination agreed.' },
+      { player: 'Héctor Fort', rumor: 'Loaned to Elche until June 2026.' },
+      { player: 'Roony Bardghji', rumor: 'Signed from FC Copenhagen.' },
+      { player: 'Marc Bernal', rumor: 'Offers from La Liga, Premier League, and Serie A.' },
+    ];
 
+    const transferRumorsList = document.getElementById('transfer-rumors-list');
+    transferRumors.forEach(rumor => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${rumor.player}: ${rumor.rumor}`;
+      transferRumorsList.appendChild(listItem);
+    });
+  </script>
 </body>
 </html>
